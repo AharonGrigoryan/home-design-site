@@ -3,7 +3,6 @@ import React from "react";
 import "./gallerycard.css";
 
 const GalleryCard = ({ image_src }) => {
-  console.log(image_src);
   return (
     <div className="gallery-card3-gallery-card">
       <GatsbyImage
