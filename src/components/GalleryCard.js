@@ -6,6 +6,7 @@ const GalleryCard = ({ image_src }) => {
   return (
     <div className="gallery-card3-gallery-card">
       <GatsbyImage
+        style={{ position: "absolute" }}
         image={image_src}
         alt="cards"
         className="gallery-card3-image"
