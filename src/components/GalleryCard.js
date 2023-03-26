@@ -2,10 +2,10 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import "./gallerycard.css";
 
-const GalleryCard = ({ image_src, rootClassName }) => {
+const GalleryCard = ({ image_src }) => {
   console.log(image_src);
   return (
-    <div className={`gallery-card3-gallery-card ${rootClassName} `}>
+    <div className="gallery-card3-gallery-card">
       <GatsbyImage
         image={image_src}
         alt="cards"

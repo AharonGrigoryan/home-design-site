@@ -54,12 +54,7 @@ const Gallery = () => {
       <div className="gallery-container">
         {gallery.map((img) => {
           const imgPath = getImage(img.childImageSharp.gatsbyImageData);
-          return (
-            <GalleryCard
-              image_src={imgPath}
-              rootClassName="rootClassName"
-            ></GalleryCard>
-          );
+          return <GalleryCard image_src={imgPath}></GalleryCard>;
         })}
       </div>
       <div className="home-container6">
