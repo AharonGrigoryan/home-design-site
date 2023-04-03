@@ -7,9 +7,9 @@ import { getImage } from "gatsby-plugin-image";
 const Gallery = () => {
   const data = useStaticQuery(query);
   const {
-    allFile: { nodes: gallery },
+    allAirtable: { nodes: gallery },
   } = data;
-
+  console.log(gallery);
   return (
     <div className="gallery-gallery">
       <h1 className="gallery-text">Our portfolio</h1>
@@ -53,7 +53,10 @@ const Gallery = () => {
       </span>
       <div className="gallery-container">
         {gallery.map((img) => {
-          const imgPath = getImage(img.childImageSharp.gatsbyImageData);
+          const {
+            data: { image },
+          } = img;
+          const imgPath = getImage(image.localFiles[0]);
           return <GalleryCard image_src={imgPath}></GalleryCard>;
         })}
       </div>
@@ -68,15 +71,20 @@ const Gallery = () => {
 
 export const query = graphql`
   query {
-    allFile {
+    allAirtable(filter: { table: { eq: "gallery" } }) {
       nodes {
-        id
-        childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: DOMINANT_COLOR)
+        data {
+          image {
+            id
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
+              }
+            }
+          }
         }
       }
     }
   }
 `;
-
 export default Gallery;
