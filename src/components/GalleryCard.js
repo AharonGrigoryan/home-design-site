@@ -4,12 +4,12 @@ import "./gallerycard.css";
 
 const GalleryCard = ({ image_src }) => {
   return (
-    <div className="gallery-card3-gallery-card">
+    <div className="gallery">
       <GatsbyImage
         // style={{ position: "absolute" }}
         image={image_src}
         alt="cards"
-        className="gallery-card3-image"
+        className="card"
       />
       <div className="gallery-card3-container">
         <h1 className="gallery-card3-text">Project Title</h1>
