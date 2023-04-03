@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 import "./hero.css";
@@ -15,7 +16,11 @@ const Hero = (props) => {
           <h1 className="hero-text">Let’s keep things organised</h1>
           <h2 className="hero-text01">Magnificent things are very simple.</h2>
           <div className="hero-btn-group">
-            <button className="hero-button button">Get Started</button>
+            <Link to="/projects">
+              {" "}
+              <button className="hero-button button">Get Started</button>
+            </Link>
+
             <button className="hero-button2 button">Learn More</button>
           </div>
           <span className="hero-text02">
